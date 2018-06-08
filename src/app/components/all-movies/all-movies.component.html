@@ -1,3 +1,5 @@
-<p>
-  all-movies works!
-</p>
+<swiper [config]="config">
+  <div *ngFor="let movie of allMovies" style="height: 200px; background-color: green">
+    {{ movie.asset }}
+  </div>
+</swiper>

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {MovieEntity} from '../models/entities/movie.entity';
+import { MovieEntity } from '../models/entities/movie.entity';
 
 @Injectable()
 export class MovieService {
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
 
   public getAllMovies(): Array<MovieEntity> {
@@ -19,6 +19,24 @@ export class MovieService {
       }),
       new MovieEntity({
         asset: 'chappie',
+        title: 'Chappie',
+        subtitle: 'Not Chappie',
+        cover_path: 'chappie/cover/large_home.png',
+        runtime: 115,
+        genres: 'Horror',
+        tags: ''
+      }),
+      new MovieEntity({
+        asset: 'ch22appie',
+        title: 'Chappie',
+        subtitle: 'Not Chappie',
+        cover_path: 'chappie/cover/large_home.png',
+        runtime: 115,
+        genres: 'Horror',
+        tags: ''
+      }),
+      new MovieEntity({
+        asset: 'Full Movie',
         title: 'Chappie',
         subtitle: 'Not Chappie',
         cover_path: 'chappie/cover/large_home.png',
