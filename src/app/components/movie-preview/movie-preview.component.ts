@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {MovieEntity} from '../../models/entities/movie.entity';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-movie-preview',
@@ -7,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviePreviewComponent implements OnInit {
 
+  @Input() movie: MovieEntity;
+  public imageURL = environment.imageURL;
   constructor() { }
 
   ngOnInit() {

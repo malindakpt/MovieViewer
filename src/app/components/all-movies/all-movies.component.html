@@ -1,5 +1,12 @@
-<swiper [config]="config">
-  <div *ngFor="let movie of allMovies" style="height: 200px; background-color: green">
-    {{ movie.asset }}
+<div *ngFor="let category of allCategories" class="w-100">
+  <div class="row"><h3>{{category.name}}</h3></div>
+  <div class="row">
+    <div class="col-12">
+      <swiper [config]="config">
+        <app-movie-preview *ngFor="let movie of category.movies" [movie]="movie"></app-movie-preview>
+      </swiper>
+    </div>
+
   </div>
-</swiper>
+</div>
+

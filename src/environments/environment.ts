@@ -3,8 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  feedURL: 'http://media.cms.showcase.axtest.net/api/storage/publish/movies/_catalog.json',
+  imageURL: 'http://media.cms.showcase.axtest.net/api/storage/publish/movies/'
 };
+
+
 
 /*
  * In development mode, to ignore zone related error stack frames such as

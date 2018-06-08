@@ -7,11 +7,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MoviePreviewComponent } from './components/movie-preview/movie-preview.component';
 import { AllMoviesComponent } from './components/all-movies/all-movies.component';
 import { CategoryViewComponent } from './components/category-view/category-view.component';
-import { MovieComponent } from './components/movie/movie.component';
 import { MovieFullViewComponent } from './components/movie-full-view/movie-full-view.component';
 import {MovieService} from './services/movie.service';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {SWIPER_CONFIG, SwiperConfigInterface, SwiperModule} from 'ngx-swiper-wrapper';
+import {MovieStore} from './models/movie.store';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -30,16 +30,16 @@ const routes: Routes = [
     MoviePreviewComponent,
     AllMoviesComponent,
     CategoryViewComponent,
-    MovieComponent,
     MovieFullViewComponent
   ],
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(routes),
+    HttpClientModule,
     SwiperModule
   ],
-  providers: [ MovieService, {
+  providers: [ MovieStore, MovieService, {
     provide: SWIPER_CONFIG,
     useValue: DEFAULT_SWIPER_CONFIG
   } ],
