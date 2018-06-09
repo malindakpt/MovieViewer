@@ -19,9 +19,10 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 };
 
 const routes: Routes = [
-	{ path: 'all', component: AllMoviesComponent },
-	{ path: 'show', component: MoviePreviewComponent },
-	{ path: '', redirectTo: '/all', pathMatch: 'full' }
+  { path: 'all', component: AllMoviesComponent },
+  { path: 'category', component: CategoryViewComponent },
+  { path: 'full', component: MovieFullViewComponent },
+  { path: '', redirectTo: '/all', pathMatch: 'full' }
 ]
 
 @NgModule({

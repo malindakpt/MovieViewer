@@ -1,5 +1,5 @@
 <div *ngFor="let category of allCategories" class="w-100">
-  <div class="row"><h3>{{category.name}}</h3></div>
+  <div class="row"><h3 (click)="navigateToCategory(category.name)">{{category.name}}</h3></div>
   <div class="row">
     <div class="col-12">
       <swiper [config]="config">
@@ -9,4 +9,8 @@
 
   </div>
 </div>
+
+
+<h1>{{allCategories.length}}</h1>
+<button (click)="refresh()">refresh</button>
 
