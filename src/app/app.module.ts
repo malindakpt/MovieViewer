@@ -21,7 +21,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 const routes: Routes = [
   { path: 'all', component: AllMoviesComponent },
   { path: 'category', component: CategoryViewComponent },
-  { path: 'full', component: MovieFullViewComponent },
+  { path: 'fullView', component: MovieFullViewComponent },
   { path: '', redirectTo: '/all', pathMatch: 'full' }
 ]
 

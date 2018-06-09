@@ -1,14 +1,15 @@
 import {Injectable} from '@angular/core';
 import {MovieService} from '../services/movie.service';
-import {Observable, Subscriber} from 'rxjs';
 import {CategoryEntiry} from './entities/category.entiry';
 import {MovieEntity} from './entities/movie.entity';
+import {MovieDetailEntity} from './entities/movie-detail.entity';
 
 
 @Injectable()
 export class MovieStore {
   private _cateogriesArr: Array<CategoryEntiry> = [];
   private _cateogriesMap = {};
+  private _movieDetailMap = {};
 
   constructor(
     private movieService: MovieService
@@ -23,6 +24,19 @@ export class MovieStore {
     return this._cateogriesMap[category];
   }
 
+  public getMovies(category: string): Array<MovieEntity> {
+    return this._cateogriesMap[category];
+  }
+
+  public getMovieDetail(id: string): MovieDetailEntity {
+    if (!this._movieDetailMap[id]) {
+      this._movieDetailMap[id] = new MovieDetailEntity();
+      this.movieService.requestMovieDetails(id).subscribe(data => {
+        Object.assign(this._movieDetailMap[id], data);
+      });
+    }
+    return this._movieDetailMap[id];
+  }
 
   public get cateogries(): Array<CategoryEntiry> {
     if (this._cateogriesArr.length > 0) {

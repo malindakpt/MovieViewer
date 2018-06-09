@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   feedURL: 'http://media.cms.showcase.axtest.net/api/storage/publish/movies/_catalog.json',
-  imageURL: 'http://media.cms.showcase.axtest.net/api/storage/publish/movies/'
+  imageURL: 'http://media.cms.showcase.axtest.net/api/storage/publish/movies/',
+  hostURL: 'http://media.cms.showcase.axtest.net/api/storage/publish/movies/'
 };
 
 

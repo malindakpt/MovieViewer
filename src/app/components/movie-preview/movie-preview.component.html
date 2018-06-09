@@ -3,4 +3,7 @@
   <div class="d-flex justify-content-center">
     {{ movie.title }}
   </div>
+  <a [routerLink]="['/fullView']"  [queryParams]="{id: movie.asset}">
+    <h3> Full View </h3>
+  </a>
 </div>

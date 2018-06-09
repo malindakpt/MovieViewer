@@ -1,2 +1,7 @@
 
+<a [routerLink]="['/all']">
+  <h3> {{category}}</h3>
+</a>
+
+
 <app-movie-preview *ngFor="let movie of movieList" [movie]="movie"></app-movie-preview>
