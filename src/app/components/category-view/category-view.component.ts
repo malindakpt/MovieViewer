@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {MovieStore} from '../../models/movie.store';
 import {MovieEntity} from '../../models/entities/movie.entity';
 
@@ -17,11 +17,16 @@ export class CategoryViewComponent implements OnInit, OnDestroy  {
   constructor(
     private route: ActivatedRoute,
     private movieStore: MovieStore,
+    private router: Router
     ) {
     this.sub = this.route.params.subscribe( params => {
       this.category = params.category;
       this.movieList = this.movieStore.getCategory(this.category);
     });
+  }
+
+  public goToHome(): void {
+    this.router.navigate(['/movies/all']);
   }
 
   ngOnInit() {

@@ -1,7 +1,15 @@
+<!--<div class="header" (click)="goToHome()"><i class="fa fa-angle-left mr-2"></i> {{category}}</div>-->
 
-<a [routerLink]="['/all']">
-  <h3><i class="fa fa-angle-left"></i> {{category}}</h3>
-</a>
+<div class="d-flex justify-content-between header pl-3 pr-3">
+  <div class="mouse-hand"  (click)="goToHome()">
+    <i class="fa fa-angle-left ml-1"></i><span class="ml-1">{{ category }}</span>
+  </div>
+  <div>
+    <i class="fa fa-search mr-4"></i><i class="fa fa-align-justify mr-1"></i>
+  </div>
+</div>
+<div class="separator"></div>
+
 <br>
 <div class="d-flex justify-content-around flex-wrap">
   <app-movie-preview *ngFor="let movie of movieList" [movie]="movie"></app-movie-preview>

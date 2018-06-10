@@ -14,9 +14,9 @@ export class AllMoviesComponent implements OnInit {
 
   public allCategories: Array<CategoryEntiry> = [];
   public config = {
-    slidesPerView: 5,
     spaceBetween: 2,
     navigation: true,
+    slidesPerView: 5
   };
   constructor(
     private movieService: MovieService,

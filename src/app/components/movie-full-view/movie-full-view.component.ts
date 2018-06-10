@@ -1,5 +1,5 @@
 import {Component, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {MovieStore} from '../../models/movie.store';
 import { map } from 'rxjs/operators';
 import {MediaPlayer} from 'dashjs';
@@ -20,6 +20,7 @@ export class MovieFullViewComponent implements OnInit, OnDestroy  {
   constructor(
     private route: ActivatedRoute,
     private movieStore: MovieStore,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -28,6 +29,10 @@ export class MovieFullViewComponent implements OnInit, OnDestroy  {
       console.log(this.movie);
       this.movieDetail = this.movieStore.getMovieDetail(params.id);
     });
+  }
+
+  public goToHome(): void {
+    this.router.navigate(['/movies/all']);
   }
 
   ngOnDestroy() {

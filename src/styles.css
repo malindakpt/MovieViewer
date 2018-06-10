@@ -21,3 +21,7 @@ body {
   margin-top: 2px;
   width: 100%;
 }
+
+.mouse-hand {
+  cursor: pointer;
+}

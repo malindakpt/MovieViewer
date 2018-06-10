@@ -13,6 +13,7 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {SWIPER_CONFIG, SwiperConfigInterface, SwiperModule} from 'ngx-swiper-wrapper';
 import {MovieStore} from './models/movie.store';
 import {AppResolver} from './resolvers/app.resolver';
+import {AllCapsPipe} from './pipes/all-caps.pipe';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -35,7 +36,8 @@ const routes: Routes = [
     MoviePreviewComponent,
     AllMoviesComponent,
     CategoryViewComponent,
-    MovieFullViewComponent
+    MovieFullViewComponent,
+    AllCapsPipe
   ],
   imports: [
     BrowserModule,
