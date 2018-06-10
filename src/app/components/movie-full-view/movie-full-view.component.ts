@@ -1,7 +1,9 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {MovieStore} from '../../models/movie.store';
 import { map } from 'rxjs/operators';
+import {MediaPlayer} from 'dashjs';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-movie-full-view',
@@ -12,6 +14,8 @@ export class MovieFullViewComponent implements OnInit, OnDestroy  {
 
   private sub;
   public movieDetail;
+  public movie;
+  public imageURL = environment.imageURL;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,7 +23,8 @@ export class MovieFullViewComponent implements OnInit, OnDestroy  {
   ) { }
 
   ngOnInit() {
-    this.sub = this.route.queryParams.subscribe(params => {
+    this.sub = this.route.queryParams.subscribe((params: any) => {
+      this.movie = this.movieStore.getMovieById(params.id)
       this.movieDetail = this.movieStore.getMovieDetail(params.id);
     });
   }
@@ -27,5 +32,4 @@ export class MovieFullViewComponent implements OnInit, OnDestroy  {
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
-
 }

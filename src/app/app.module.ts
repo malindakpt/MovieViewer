@@ -12,6 +12,7 @@ import {MovieService} from './services/movie.service';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {SWIPER_CONFIG, SwiperConfigInterface, SwiperModule} from 'ngx-swiper-wrapper';
 import {MovieStore} from './models/movie.store';
+import {AppResolver} from './resolvers/app.resolver';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -19,10 +20,13 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
 };
 
 const routes: Routes = [
-  { path: 'all', component: AllMoviesComponent },
-  { path: 'category', component: CategoryViewComponent },
-  { path: 'fullView', component: MovieFullViewComponent },
-  { path: '', redirectTo: '/all', pathMatch: 'full' }
+  { path: 'movies', resolve: { AppResolver }, children: [
+      { path: 'all', component: AllMoviesComponent },
+      { path: 'category', component: CategoryViewComponent },
+      { path: 'fullView', component: MovieFullViewComponent },
+      { path: '', redirectTo: 'all', pathMatch: 'full' }
+    ]},
+  { path: '', redirectTo: '/movies/all', pathMatch: 'full' }
 ]
 
 @NgModule({
@@ -43,7 +47,8 @@ const routes: Routes = [
   providers: [ MovieStore, MovieService, {
     provide: SWIPER_CONFIG,
     useValue: DEFAULT_SWIPER_CONFIG
-  } ],
+  },
+    AppResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

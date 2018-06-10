@@ -16,6 +16,7 @@ export class AllMoviesComponent implements OnInit {
   public config = {
     slidesPerView: 5,
     spaceBetween: 10,
+    navigation: true,
   };
   constructor(
     private movieService: MovieService,

@@ -6,9 +6,9 @@
 <!--</a>-->
 
 
-<div class="">
+<a [routerLink]="['/movies/fullView']"  [queryParams]="{id: movie.asset}">
   <img class="slider-image" [src]="imageURL + movie.cover_path">
   <div class="image-text p-1">
     {{ movie.title }}
   </div>
-</div>
+</a>
