@@ -1,3 +1,18 @@
-.preview {
-  /*width: 200px;*/
+.slider-image {
+  width: 100%;
+}
+
+.image-text {
+  bottom: -16px;
+  position: absolute;
+  /* top: 91%; */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #080854;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.7;
 }

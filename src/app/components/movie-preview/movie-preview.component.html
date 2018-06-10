@@ -1,9 +1,14 @@
+<!--<a [routerLink]="['/fullView']"  [queryParams]="{id: movie.asset}">-->
+<!--<img class="slider-image" [src]="imageURL + movie.cover_path">-->
+<!--<div class="image-text">-->
+<!--{{ movie.title }}-->
+<!--</div>-->
+<!--</a>-->
+
+
 <div class="">
-  <img [src]="imageURL + movie.cover_path">
-  <div class="d-flex justify-content-center">
+  <img class="slider-image" [src]="imageURL + movie.cover_path">
+  <div class="image-text p-1">
     {{ movie.title }}
   </div>
-  <a [routerLink]="['/fullView']"  [queryParams]="{id: movie.asset}">
-    <h3> Full View </h3>
-  </a>
 </div>
