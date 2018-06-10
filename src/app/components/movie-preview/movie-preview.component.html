@@ -1,14 +1,10 @@
-<!--<a [routerLink]="['/fullView']"  [queryParams]="{id: movie.asset}">-->
-<!--<img class="slider-image" [src]="imageURL + movie.cover_path">-->
-<!--<div class="image-text">-->
-<!--{{ movie.title }}-->
-<!--</div>-->
-<!--</a>-->
-
-
-<a [routerLink]="['/movies/fullView']"  [queryParams]="{id: movie.asset}">
-  <img class="slider-image" [src]="imageURL + movie.cover_path">
-  <div class="image-text p-1">
+<!--<a [routerLink]="['/movies/fullView']"  [queryParams]="{id: movie.asset}">-->
+<div class="float-left normal-image-container" >
+  <img class="slider-image" [ngClass]="isSlider ? 'slider-image' : 'normal-image'" [src]="imageURL + movie.cover_path">
+  <!--<div class="image-text p-1">-->
+  <div class="normal-text">
     {{ movie.title }}
   </div>
-</a>
+</div>
+
+<!--</a>-->

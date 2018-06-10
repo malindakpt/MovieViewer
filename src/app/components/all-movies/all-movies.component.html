@@ -6,7 +6,7 @@
   <div>
     <div class="col-12">
       <swiper [config]="config">
-        <app-movie-preview *ngFor="let movie of category.movies" [movie]="movie"></app-movie-preview>
+        <app-movie-preview [isSlider]="true" *ngFor="let movie of category.movies" [movie]="movie"></app-movie-preview>
       </swiper>
     </div>
 

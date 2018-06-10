@@ -25,6 +25,7 @@ export class MovieFullViewComponent implements OnInit, OnDestroy  {
   ngOnInit() {
     this.sub = this.route.queryParams.subscribe((params: any) => {
       this.movie = this.movieStore.getMovieById(params.id)
+      console.log(this.movie);
       this.movieDetail = this.movieStore.getMovieDetail(params.id);
     });
   }

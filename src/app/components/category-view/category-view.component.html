@@ -2,6 +2,8 @@
 <a [routerLink]="['/all']">
   <h3><i class="fa fa-angle-left"></i> {{category}}</h3>
 </a>
+<br>
+<div class="d-flex justify-content-around flex-wrap">
+  <app-movie-preview *ngFor="let movie of movieList" [movie]="movie"></app-movie-preview>
+</div>
 
-
-<app-movie-preview *ngFor="let movie of movieList" [movie]="movie"></app-movie-preview>

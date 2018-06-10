@@ -20,7 +20,7 @@ export class CategoryViewComponent implements OnInit, OnDestroy  {
     ) {
     this.sub = this.route.params.subscribe( params => {
       this.category = params.category;
-      this.movieList = this.movieStore.getMovies(this.category);
+      this.movieList = this.movieStore.getCategory(this.category);
     });
   }
 

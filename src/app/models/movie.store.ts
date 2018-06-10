@@ -22,12 +22,24 @@ export class MovieStore {
     }
     return this._cateogriesMap[category];
   }
-
-  public getMovies(category: string): Array<MovieEntity> {
-    return this._cateogriesMap[category];
+  private getMovie(id: string) {
+    if (!this._movieMap[id]) {
+      this._movieMap[id] = {};
+    }
+    return this._movieMap[id];
   }
 
+  // public getMoviesByCategory(category: string): Array<MovieEntity> {
+  //   return this._cateogriesMap[category];
+  // }
+
   public getMovieById(id: string): MovieEntity {
+    if (!this._movieMap[id]) {
+      this._movieMap[id] = this.getMovie(id);
+        this.movieService.requestAllMovies().subscribe((data: Array<any>) => {
+         this.generateMovieModel(data);
+        });
+    }
     return this._movieMap[id];
   }
 
@@ -52,10 +64,10 @@ export class MovieStore {
     // }
   }
 
-  public generateCategoryModel(data: Array<any>): void {
+  public generateMovieModel(data: Array<any>): void {
     for (const obj of data) {
       const movie = new MovieEntity(obj);
-      this._movieMap[movie.asset] = movie;
+      Object.assign(this.getMovie(movie.asset), movie);
       this.getCategory(movie.genres).push(movie);
     }
 

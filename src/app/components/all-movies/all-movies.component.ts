@@ -29,7 +29,7 @@ export class AllMoviesComponent implements OnInit {
   }
 
   public navigateToCategory(category: string): void {
-    this.router.navigate(['/category', { category: category }]);
+    this.router.navigate(['/movies/category', { category: category }]);
   }
 
 }

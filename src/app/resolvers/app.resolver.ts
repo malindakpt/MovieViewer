@@ -13,7 +13,7 @@ export class AppResolver implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
     this.movieService.requestAllMovies().subscribe((data: Array<any>) => {
-      this.movieStore.generateCategoryModel(data);
+      this.movieStore.generateMovieModel(data);
     });
   }
 }

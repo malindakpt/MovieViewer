@@ -10,6 +10,7 @@ export class MovieEntity {
   constructor(obj: any) {
     Object.assign(this, obj);
   }
+
   get asset(): string {
     return this._asset;
   }

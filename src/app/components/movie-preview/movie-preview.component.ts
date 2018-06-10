@@ -10,6 +10,7 @@ import {environment} from '../../../environments/environment';
 export class MoviePreviewComponent implements OnInit {
 
   @Input() movie: MovieEntity;
+  @Input() isSlider = false;
   public imageURL = environment.imageURL;
   constructor() { }
 

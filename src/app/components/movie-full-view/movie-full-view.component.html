@@ -1,17 +1,46 @@
-<div *ngIf="movie">
-  <img class="slider-image" [src]="imageURL + movie.cover_path">
+<div class="p-4">
+  <div class="row">
+    <div class="col-xs-12 col-sm-2">
+      <img *ngIf="movie" class="w-100" [src]="imageURL + movie._cover_path">
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="">
+        <div class="row">
+          <div class="col-xs-12 col-sm-5">
+            <b>Duration</b>
+          </div>
+          <div class="col-xs-12 col-sm-7">
+            {{movieDetail.runtime}}
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-xs-12 col-sm-5">
+            <b>Director</b>
+          </div>
+          <div class="col-xs-12 col-sm-7">
+            {{movieDetail.directors}}
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-xs-12 col-sm-5">
+            <b>Stars</b>
+          </div>
+          <div class="col-xs-12 col-sm-7">
+            {{movieDetail.cast}}
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      {{movieDetail.description}}
+    </div>
+  </div>
 </div>
 
-<div>
-  <p>
-    {{movieDetail.description}}
-  </p>
-  <p>
-    {{movieDetail.duration}}
-  </p>
-  <p>
-    {{movieDetail.directors}}
-  </p>
-</div>
+
+
 
 

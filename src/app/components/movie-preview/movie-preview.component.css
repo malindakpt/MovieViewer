@@ -2,6 +2,33 @@
   width: 100%;
 }
 
+.normal-image {
+  width: 100%;
+}
+
+.normal-text {
+  position: absolute;
+  bottom: 0%;
+  /* left: 16px; */
+  /* font-size: 18px; */
+  /* text-align: center; */
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0px;
+  opacity: 0.7;
+  color: #FFFFFF;
+  background: #080854;
+  width: 100%;
+}
+
+.normal-image-container {
+  width: 200px;
+  margin: 1%;
+  position: relative;
+}
+
 .image-text {
   bottom: -16px;
   position: absolute;
