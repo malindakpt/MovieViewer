@@ -13,7 +13,7 @@ export class MovieFullViewComponent implements OnInit, OnDestroy  {
   private sub;
   public movieDetail;
   public movie;
-  public imageURL = environment.imageURL;
+  public imageURL = environment.hostURL;
 
   constructor(
     private route: ActivatedRoute,

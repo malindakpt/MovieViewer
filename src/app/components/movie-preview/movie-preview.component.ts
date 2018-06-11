@@ -11,7 +11,7 @@ import {MovieStore} from '../../models/movie.store';
 export class MoviePreviewComponent {
   @Input() public movie: MovieEntity;
   @Input() public isSlider = false;
-  public imageURL = environment.imageURL;
+  public imageURL = environment.hostURL;
 
   constructor(
     private movieStore: MovieStore
