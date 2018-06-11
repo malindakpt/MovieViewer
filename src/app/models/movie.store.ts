@@ -1,9 +1,8 @@
-import {Injectable} from '@angular/core';
-import {MovieService} from '../services/movie.service';
-import {CategoryEntiry} from './entities/category.entiry';
-import {MovieEntity} from './entities/movie.entity';
-import {MovieDetailEntity} from './entities/movie-detail.entity';
-
+import { Injectable } from '@angular/core';
+import { MovieService } from '../services/movie.service';
+import { CategoryEntiry } from './entities/category.entiry';
+import { MovieEntity } from './entities/movie.entity';
+import { MovieDetailEntity } from './entities/movie-detail.entity';
 
 @Injectable()
 export class MovieStore {
@@ -12,7 +11,8 @@ export class MovieStore {
   private _movieDetailMap = {};
   private _movieMap = {};
 
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService) {
+  }
 
   // Returns category if exist, else create new and return
   public getCategory(category: string) {
@@ -23,9 +23,9 @@ export class MovieStore {
   }
 
   // Returns movie if exists, else create new and return
-  private getMovie(id: string) {
+  public getMovie(id: string) {
     if (!this._movieMap[id]) {
-      this._movieMap[id] = {};
+      this._movieMap[id] = new MovieEntity({});
     }
     return this._movieMap[id];
   }
@@ -34,13 +34,11 @@ export class MovieStore {
   public getMovieById(id: string): MovieEntity {
     if (!this._movieMap[id]) {
       this._movieMap[id] = this.getMovie(id);
-        this.movieService.requestAllMovies().subscribe((data: Array<any>) => {
-         this.generateMovieModel(data);
-        });
     }
     return this._movieMap[id];
   }
 
+  // Return movie detail if exist, else request data and return
   public getMovieDetail(id: string): MovieDetailEntity {
     if (!this._movieDetailMap[id]) {
       this._movieDetailMap[id] = new MovieDetailEntity();
@@ -51,17 +49,12 @@ export class MovieStore {
     return this._movieDetailMap[id];
   }
 
+  // Returns array of existing categories
   public get cateogries(): Array<CategoryEntiry> {
-    // if (this._cateogriesArr.length > 0) {
-      return this._cateogriesArr;
-    // } else {
-    //   // this.movieService.requestAllMovies().subscribe((data: Array<any>) => {
-    //   //  this.generateCategoryModel(data);
-    //   // });
-    //   return this._cateogriesArr;
-    // }
+    return this._cateogriesArr;
   }
 
+  // Generate all required movie data models
   public generateMovieModel(data: Array<any>): void {
     for (const obj of data) {
       const movie = new MovieEntity(obj);

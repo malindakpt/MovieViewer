@@ -7,52 +7,51 @@ export class LicensingEntity {
   private _valid_from: string;
   private _valid_till: string;
 
-
-  get name(): string {
+  public get name(): string {
     return this._name;
   }
 
-  set name(value: string) {
+  public set name(value: string) {
     this._name = value;
   }
 
-  get subscription(): boolean {
+  public get subscription(): boolean {
     return this._subscription;
   }
 
-  set subscription(value: boolean) {
+  public set subscription(value: boolean) {
     this._subscription = value;
   }
 
-  get ad(): boolean {
+  public get ad(): boolean {
     return this._ad;
   }
 
-  set ad(value: boolean) {
+  public set ad(value: boolean) {
     this._ad = value;
   }
 
-  get transaction(): boolean {
+  public get transaction(): boolean {
     return this._transaction;
   }
 
-  set transaction(value: boolean) {
+  public set transaction(value: boolean) {
     this._transaction = value;
   }
 
-  get valid_from(): string {
+  public get valid_from(): string {
     return this._valid_from;
   }
 
-  set valid_from(value: string) {
+  public set valid_from(value: string) {
     this._valid_from = value;
   }
 
-  get valid_till(): string {
+  public get valid_till(): string {
     return this._valid_till;
   }
 
-  set valid_till(value: string) {
+  public set valid_till(value: string) {
     this._valid_till = value;
   }
 }

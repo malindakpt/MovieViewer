@@ -11,59 +11,59 @@ export class MovieEntity {
     Object.assign(this, obj);
   }
 
-  get asset(): string {
+  public get asset(): string {
     return this._asset;
   }
 
-  set asset(value: string) {
+  public set asset(value: string) {
     this._asset = value;
   }
 
-  get title(): string {
+  public get title(): string {
     return this._title;
   }
 
-  set title(value: string) {
+  public set title(value: string) {
     this._title = value;
   }
 
-  get subtitle(): string {
+  public get subtitle(): string {
     return this._subtitle;
   }
 
-  set subtitle(value: string) {
+  public set subtitle(value: string) {
     this._subtitle = value;
   }
 
-  get cover_path(): string {
+  public get cover_path(): string {
     return this._cover_path;
   }
 
-  set cover_path(value: string) {
+  public set cover_path(value: string) {
     this._cover_path = value;
   }
 
-  get runtime(): number {
+  public get runtime(): number {
     return this._runtime;
   }
 
-  set runtime(value: number) {
+  public set runtime(value: number) {
     this._runtime = value;
   }
 
-  get genres(): string {
+  public get genres(): string {
     return this._genres;
   }
 
-  set genres(value: string) {
+  public set genres(value: string) {
     this._genres = value;
   }
 
-  get tags(): string {
+  public get tags(): string {
     return this._tags;
   }
 
-  set tags(value: string) {
+  public set tags(value: string) {
     this._tags = value;
   }
 }

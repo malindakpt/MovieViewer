@@ -2,6 +2,7 @@ import {Component, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MovieStore} from '../../models/movie.store';
 import {environment} from '../../../environments/environment';
+import {MovieEntity} from '../../models/entities/movie.entity';
 
 @Component({
   selector: 'app-movie-full-view',
@@ -21,7 +22,7 @@ export class MovieFullViewComponent implements OnInit, OnDestroy  {
     private router: Router
   ) { }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.sub = this.route.queryParams.subscribe((params: any) => {
       this.movie = this.movieStore.getMovieById(params.id);
       this.movieDetail = this.movieStore.getMovieDetail(params.id);
@@ -32,7 +33,7 @@ export class MovieFullViewComponent implements OnInit, OnDestroy  {
     this.router.navigate(['/movies/all']);
   }
 
-  ngOnDestroy() {
+  public ngOnDestroy() {
     this.sub.unsubscribe();
   }
 }

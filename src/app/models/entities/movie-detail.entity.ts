@@ -18,115 +18,115 @@ export class MovieDetailEntity {
   private _licensing: LicensingEntity;
 
 
-  get id(): string {
+  public get id(): string {
     return this._id;
   }
 
-  set id(value: string) {
+  public set id(value: string) {
     this._id = value;
   }
 
-  get title(): string {
+  public get title(): string {
     return this._title;
   }
 
-  set title(value: string) {
+  public set title(value: string) {
     this._title = value;
   }
 
-  get subtitle(): string {
+  public get subtitle(): string {
     return this._subtitle;
   }
 
-  set subtitle(value: string) {
+  public set subtitle(value: string) {
     this._subtitle = value;
   }
 
-  get description(): string {
+  public get description(): string {
     return this._description;
   }
 
-  set description(value: string) {
+  public set description(value: string) {
     this._description = value;
   }
 
-  get genres(): string {
+  public get genres(): string {
     return this._genres;
   }
 
-  set genres(value: string) {
+  public set genres(value: string) {
     this._genres = value;
   }
 
-  get cast(): string {
+  public get cast(): string {
     return this._cast;
   }
 
-  set cast(value: string) {
+  public set cast(value: string) {
     this._cast = value;
   }
 
-  get directors(): string {
+  public get directors(): string {
     return this._directors;
   }
 
-  set directors(value: string) {
+  public set directors(value: string) {
     this._directors = value;
   }
 
-  get year(): number {
+  public get year(): number {
     return this._year;
   }
 
-  set year(value: number) {
+  public set year(value: number) {
     this._year = value;
   }
 
-  get country(): string {
+  public get country(): string {
     return this._country;
   }
 
-  set country(value: string) {
+  public set country(value: string) {
     this._country = value;
   }
 
-  get runtime(): number {
+  public get runtime(): number {
     return this._runtime;
   }
 
-  set runtime(value: number) {
+  public set runtime(value: number) {
     this._runtime = value;
   }
 
-  get age_rating(): string {
+  public get age_rating(): string {
     return this._age_rating;
   }
 
-  set age_rating(value: string) {
+  public set age_rating(value: string) {
     this._age_rating = value;
   }
 
-  get tags(): string {
+  public get tags(): string {
     return this._tags;
   }
 
-  set tags(value: string) {
+  public set tags(value: string) {
     this._tags = value;
   }
 
-  get streams(): Array<StreamEntity> {
+  public get streams(): Array<StreamEntity> {
     return this._streams;
   }
 
-  set streams(value: Array<StreamEntity>) {
+  public set streams(value: Array<StreamEntity>) {
     this._streams = value;
   }
 
-  get licensing(): LicensingEntity {
+  public get licensing(): LicensingEntity {
     return this._licensing;
   }
 
-  set licensing(value: LicensingEntity) {
+  public set licensing(value: LicensingEntity) {
     this._licensing = value;
   }
 }
