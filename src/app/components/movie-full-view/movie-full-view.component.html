@@ -10,7 +10,7 @@
 
 <div class="p-4">
   <div class="row">
-    <div class="d-flex justify-content-center ">
+    <div class="justify-content-center d-none d-sm-flex">
       <!--Added temporary image since video is not working-->
       <img src="../assets/img/video_prev.PNG" class="video-container">
     </div>
@@ -23,10 +23,19 @@
       <div class="">
         <div class="row">
           <div class="col-xs-12 col-sm-5">
+            <b>Name</b>
+          </div>
+          <div class="col-xs-12 col-sm-7">
+            {{movieDetail.title}}
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-xs-12 col-sm-5">
             <b>Duration</b>
           </div>
           <div class="col-xs-12 col-sm-7">
-            {{movieDetail.runtime}}
+            {{movieDetail.runtime}} min.
           </div>
         </div>
         <br>
@@ -47,9 +56,19 @@
             {{movieDetail.cast}}
           </div>
         </div>
+        <div class="row">
+          <div class="col-12">
+            <a target="_blank" href="https://www.imdb.com/find?ref_=nv_sr_fn&q={{this.movie.asset}}&s=all">
+              <img src="../assets/img/imdb.png" class="imdb-img">
+            </a>
+            <br><br>
+          </div>
+
+        </div>
       </div>
 
     </div>
+    <br>
     <div class="col-xs-12 col-sm-6">
       {{movieDetail.description}}
     </div>

@@ -1,4 +1,8 @@
 .video-container {
-  width: 75%;
+  width: 60%;
   height: 90%;
+}
+
+.imdb-img {
+  width: 30%
 }
