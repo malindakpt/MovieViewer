@@ -18,6 +18,7 @@ export class MoviePreviewComponent {
   ) { }
 
   public getMovieYear(): string {
-    return this.movieStore.getMovieDetail(this.movie.asset).year.toString();
+    const year = this.movieStore.getMovieDetail(this.movie.asset).year;
+    return year ? year.toString() : '';
   }
 }
