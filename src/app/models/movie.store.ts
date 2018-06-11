@@ -12,16 +12,17 @@ export class MovieStore {
   private _movieDetailMap = {};
   private _movieMap = {};
 
-  constructor(
-    private movieService: MovieService
-  ) { }
+  constructor(private movieService: MovieService) { }
 
+  // Returns category if exist, else create new and return
   public getCategory(category: string) {
     if (!this._cateogriesMap[category]) {
       this._cateogriesMap[category] = [];
     }
     return this._cateogriesMap[category];
   }
+
+  // Returns movie if exists, else create new and return
   private getMovie(id: string) {
     if (!this._movieMap[id]) {
       this._movieMap[id] = {};
@@ -29,10 +30,7 @@ export class MovieStore {
     return this._movieMap[id];
   }
 
-  // public getMoviesByCategory(category: string): Array<MovieEntity> {
-  //   return this._cateogriesMap[category];
-  // }
-
+  // Return movie if exist, else request data and return
   public getMovieById(id: string): MovieEntity {
     if (!this._movieMap[id]) {
       this._movieMap[id] = this.getMovie(id);

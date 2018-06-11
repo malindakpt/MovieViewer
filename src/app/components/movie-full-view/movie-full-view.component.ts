@@ -1,8 +1,6 @@
 import {Component, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MovieStore} from '../../models/movie.store';
-import { map } from 'rxjs/operators';
-import {MediaPlayer} from 'dashjs';
 import {environment} from '../../../environments/environment';
 
 @Component({

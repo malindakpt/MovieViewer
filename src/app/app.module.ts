@@ -14,6 +14,7 @@ import {SWIPER_CONFIG, SwiperConfigInterface, SwiperModule} from 'ngx-swiper-wra
 import {MovieStore} from './models/movie.store';
 import {AppResolver} from './resolvers/app.resolver';
 import {AllCapsPipe} from './pipes/all-caps.pipe';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -44,7 +45,8 @@ const routes: Routes = [
     NgbModule.forRoot(),
     RouterModule.forRoot(routes),
     HttpClientModule,
-    SwiperModule
+    SwiperModule,
+    AngularFontAwesomeModule
   ],
   providers: [ MovieStore, MovieService, {
     provide: SWIPER_CONFIG,
