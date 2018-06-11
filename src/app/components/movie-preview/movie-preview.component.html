@@ -1,9 +1,12 @@
 <a [routerLink]="['/movies/fullView']" [queryParams]="{id: movie.asset}">
   <div class="float-left normal-image-container">
     <img class="slider-image" [ngClass]="isSlider ? 'slider-image' : 'normal-image'"
-         [src]="imageURL + movie.cover_path">
+         [src]="imageURL + movie.asset + '/cover/small_video_list.png'">
     <div class="normal-text">
       {{ movie.title }}
+      <div *ngIf="!isSlider">
+        {{ getMovieYear() }}
+      </div>
     </div>
   </div>
 </a>
