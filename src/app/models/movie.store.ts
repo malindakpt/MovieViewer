@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
-import { MovieService } from '../services/movie.service';
-import { CategoryEntiry } from './entities/category.entiry';
-import { MovieEntity } from './entities/movie.entity';
-import { MovieDetailEntity } from './entities/movie-detail.entity';
+import {Injectable} from '@angular/core';
+import {MovieService} from '../services/movie.service';
+import {CategoryEntity} from './entities/category.entiry';
+import {MovieEntity} from './entities/movie.entity';
+import {MovieDetailEntity} from './entities/movie-detail.entity';
 
 @Injectable()
 export class MovieStore {
-  private _cateogriesArr: Array<CategoryEntiry> = [];
+  private _cateogriesArr: Array<CategoryEntity> = [];
   private _cateogriesMap = {};
   private _movieDetailMap = {};
   private _movieMap = {};
@@ -50,7 +50,7 @@ export class MovieStore {
   }
 
   // Returns array of existing categories
-  public get cateogries(): Array<CategoryEntiry> {
+  public get cateogries(): Array<CategoryEntity> {
     return this._cateogriesArr;
   }
 
@@ -64,7 +64,7 @@ export class MovieStore {
 
     for (const cat in this._cateogriesMap) {
       if (this._cateogriesMap.hasOwnProperty(cat)) {
-        this._cateogriesArr.push(new CategoryEntiry({
+        this._cateogriesArr.push(new CategoryEntity({
           name: cat,
           movies: this._cateogriesMap[cat]
         }));

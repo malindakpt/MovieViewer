@@ -1,6 +1,6 @@
 import {MovieEntity} from './movie.entity';
 
-export class CategoryEntiry {
+export class CategoryEntity {
   private _name: string;
   private _movies: Array<MovieEntity>;
 

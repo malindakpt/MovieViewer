@@ -1,8 +1,7 @@
-import {Component, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MovieStore} from '../../models/movie.store';
 import {environment} from '../../../environments/environment';
-import {MovieEntity} from '../../models/entities/movie.entity';
 
 @Component({
   selector: 'app-movie-full-view',

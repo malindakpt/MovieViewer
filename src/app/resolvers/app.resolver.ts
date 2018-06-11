@@ -12,7 +12,7 @@ export class AppResolver implements Resolve<any> {
   ) { }
 
   // Request allMovie data befor route to any route
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
+  public resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
     this.movieService.requestAllMovies().subscribe((data: Array<any>) => {
       this.movieStore.generateMovieModel(data);
     });

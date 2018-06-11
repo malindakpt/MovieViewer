@@ -1,7 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { MovieEntity } from '../../models/entities/movie.entity';
-import { environment } from '../../../environments/environment';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Component, Input} from '@angular/core';
+import {MovieEntity} from '../../models/entities/movie.entity';
+import {environment} from '../../../environments/environment';
 import {MovieStore} from '../../models/movie.store';
 
 @Component({
@@ -17,7 +16,6 @@ export class MoviePreviewComponent {
   constructor(
     private movieStore: MovieStore
   ) { }
-
 
   public getMovieYear(): string {
     return this.movieStore.getMovieDetail(this.movie.asset).year.toString();
